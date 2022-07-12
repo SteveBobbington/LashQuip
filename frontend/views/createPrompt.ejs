@@ -1,0 +1,8 @@
+<div id="overlay">
+	<template v-if="dupedPrompt">
+		<div class="centre-text" id="duped-prompt">You have already submitted this prompt before</div>
+	</template>
+	<div class="centre-text">Think of a funny prompt</div>
+	<input type="text" id="prompt-box" class="centre-input" v-model="promptBox" class="form-control" placeholder="Prompt text">
+	<button class="centre-button" v-on:click="createPrompt()" v-bind:style='{"cursor": (loading? "progress":"default")}'>Create</button>
+</div>

@@ -1,0 +1,12 @@
+<div id="overlay">
+	<div id="prompt-text" class="centre-text">{{state.currentPrompt.text}}</div>
+	<template v-if="state.currentPrompt.voteAllowed">
+		<div class="flex-buttons">
+			<button id="vote1-button" v-on:click="vote1()" v-bind:style='{"cursor": (loading? "progress":"default")}'>{{state.currentPrompt.answer1}}</button>
+			<button id="vote2-button" v-on:click="vote2()" v-bind:style='{"cursor": (loading? "progress":"default")}'>{{state.currentPrompt.answer2}}</button>
+		</div>
+	</template>
+	<template v-else>
+		<div class="centre-text" id="cant-vote">You submitted this answer, so you cant vote!</div>
+	</template>
+</div>

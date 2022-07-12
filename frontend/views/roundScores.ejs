@@ -1,0 +1,6 @@
+<div id="overlay">
+	<div class="centre-text">Round Scores</div>
+	<div class="flex-text" v-for="prompt in roundScores">
+		{{prompt.text}} {{prompt.answerText}} By: {{prompt.user}} Scored: {{prompt.score}}
+	</div>
+</div>

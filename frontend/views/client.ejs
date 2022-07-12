@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+    <%- include('header'); -%>
+
+    <h2 class="title">Lashquip</h2>
+
+    <div id="game">
+        <template v-if="connected">
+			<div id="countdown">{{state.countdown}}</div>
+			<template v-if="me.id==1">
+				<template v-if="state.state==1">
+					<button id="start" v-on:click="start()">Start</button>
+				</template>
+			</template>
+			<template v-if="me.state>1">
+				<%- include('scores'); -%>
+			</template>
+			<template v-if="me.state==1">
+				<%- include('players'); -%>
+				<br>Waiting for players...
+			</template>
+			<%- include('chat'); -%>
+			<template v-if="me.state==0">
+				<%- include('login'); -%>
+			</template>
+			<template v-if="me.state==2">
+				<%- include('createPrompt'); -%>
+			</template>
+			<template v-if="me.state==3">
+				<br>Waiting for others to submit...
+			</template>
+			<template v-if="me.state==4">
+				<%- include('writeAnswer'); -%>
+			</template>
+			<template v-if="me.state==5">
+				<br>Waiting for others to submit...
+			</template>
+			<template v-if="me.state==6">
+				<%- include('vote'); -%>
+			</template>
+			<template v-if="me.state==7">
+				<br>Waiting for others to vote...
+			</template>
+			<template v-if="me.state==8">
+				<%- include('results'); -%>
+			</template>
+			<template v-if="me.state==9">
+				<%- include('roundScores'); -%>
+			</template>
+			<template v-if="me.state==10">
+				END OF THE GAME!
+			</template>
+        </template>
+        <template v-else>
+            <p>Connecting...</p>
+        </template>
+    </div>
+
+    <%- include('footer'); -%>
+
+</html>

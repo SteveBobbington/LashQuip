@@ -1,0 +1,29 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "Function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+	{
+	"type": "cosmosDB",
+	"direction": "out",
+	"name": "prompts",
+	"databaseName": "lashQuipDB",
+	"collectionName": "prompts",
+	"creatIfNotExists": "false",
+	"connectionStringSetting": "lashQuip"
+	}
+  ]
+}

@@ -1,0 +1,5 @@
+<div id="overlay">
+	<div id="prompt-text" class="centre-text">"{{me.promptToAnswer.text}}"</div>
+	<input type="text" id="answer-box" class="centre-input" v-model="answerBox" class="form-control" placeholder="Answer text">
+	<button class="centre-button" v-on:click="submitAnswer()" v-bind:style='{"cursor": (loading? "progress":"default")}'>Submit</button>
+</div>

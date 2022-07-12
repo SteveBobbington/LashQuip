@@ -1,0 +1,12 @@
+<div id="overlay">
+	<template v-if="incorrect">
+		<div id="incorrect-login" class="centre-text">
+			Incorrect login
+		</div>
+		<div class="centre-text">(Username must be 4-16 characters, password must be 8-24)</div>
+	</template>
+	<input type="text" id="username-box" class="centre-input" v-model="me.username" class="form-control" placeholder="Username">
+	<input type="text" id="password-box" class="centre-input" v-model="me.password" class="form-control" placeholder="Password">
+	<button id="register-button" class="centre-button" v-on:click="register()" v-bind:style='{"cursor": (loading? "progress":"default")}'>Register</button>
+	<button id="login-button" class="centre-button" v-on:click="login()" v-bind:style='{"cursor": (loading? "progress":"default")}'>Login</button>
+</div>
